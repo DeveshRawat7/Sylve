@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message for You</title>
+    <link rel="stylesheet" href="styles2.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="question">Ig I forgot my wallet can you pay Honey (Mini Devu is added to your Desert Section)</h2>
+        <video class="gif" width="1200" height="400" muted autoplay loop>
+            <source src="minidevu.mp4" type="video/mp4">
+        </video>
+        <div class="btn-group">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
+    </div>
+
+    <script>
+        const question = document.querySelector(".question");
+        const gif = document.querySelector(".gif");
+        const yesBtn = document.querySelector(".yes-btn");
+        const noBtn = document.querySelector(".no-btn");
+
+        yesBtn.addEventListener("click", () => {
+            question.innerHTML = "DID YOU REALLY THINK I WOULD LET YOU PAY POOKIE";
+            
+            // Replace the video with an image (GIF)
+            const img = document.createElement("img");
+            img.src = "https://media.giphy.com/media/KsoUUIrTbDWYU/giphy.gif";
+            img.width = 1200;
+            img.height = 400;
+
+            // Replace the video element with the new image
+            gif.replaceWith(img);
+        });
+
+        noBtn.addEventListener("mouseover", () => {
+            const noBtnRect = noBtn.getBoundingClientRect();
+            const maxX = window.innerWidth - noBtnRect.width;
+            const maxY = window.innerHeight - noBtnRect.height;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noBtn.style.position = "absolute";
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        });
+    </script>
+</body>
+</html>
