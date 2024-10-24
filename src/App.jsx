@@ -51,7 +51,7 @@ export default function Page() {
     if (yesPressed) {
       // Set a timeout to redirect after 5 seconds
       const timer = setTimeout(() => {
-        window.location.href = "../date.html"; // Change this to your target HTML page
+        window.location.href = "/date.html"; // Change this to your target HTML page
       }, 5000); // 5000 milliseconds = 5 seconds
 
       // Cleanup function to clear the timeout if the component unmounts
